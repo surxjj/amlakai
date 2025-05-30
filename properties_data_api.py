@@ -9,7 +9,8 @@ import time
 
 def job():
     qdrant = QdrantClient(host="localhost", port=6333)
-    model = SentenceTransformer('all-MiniLM-L6-v2')
+    model = SentenceTransformer('sentence-transformers/paraphrase-MiniLM-L3-v2')
+
     collection_name = "properties_collection"
 
     qdrant.recreate_collection(
