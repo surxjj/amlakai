@@ -116,4 +116,11 @@ if __name__ == "__main__":
 
     # Start API
     print("🚀 Starting FastAPI server...")
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run(
+    "main:app",
+    host="0.0.0.0",
+    port=8000,
+    ssl_keyfile="/home/ubuntu/.ssl/key.pem",
+    ssl_certfile="/home/ubuntu/.ssl/cert.pem"
+)
+
