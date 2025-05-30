@@ -99,14 +99,14 @@ def job():
     # ─── UPSERT TO QDRANT ────────────────────────────────────────────────
     qdrant.upsert(collection_name=COLLECTION_NAME, points=points)
     print(f"✅ Upserted {len(points)} documents into “{COLLECTION_NAME}”")
-def about_us_api():
-    # Run the job once at script start
-    job()
+# def about_us_api():
+#     # Run the job once at script start
+#     job()
 
-    # Schedule to run every 12 hours
-    schedule.every(12).hours.do(job)
+#     # Schedule to run every 12 hours
+#     schedule.every(12).hours.do(job)
 
-    # Keep running
-    while True:
-        schedule.run_pending()
-        time.sleep(60)
+#     # Keep running
+#     while True:
+#         schedule.run_pending()
+#         time.sleep(60)
