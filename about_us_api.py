@@ -9,7 +9,7 @@ from sentence_transformers import SentenceTransformer
 
 def job():
     # ─── CONFIG ─────────────────────────────────────────────────────────
-    OPENAI_API_KEY    = os.getenv("OPENAI_API_KEY", "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")
+    OPENAI_API_KEY    = os.getenv("OPENAI_API_KEY")
     ABOUT_API         = "https://admin.apilproperties.com/api/about-apil"
     CONTACT_API       = "https://admin.apilproperties.com/api/contact-us"
     COLLECTION_NAME   = "info_collection"
