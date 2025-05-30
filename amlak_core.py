@@ -15,7 +15,7 @@ from qdrant_client.http.models import MatchValue
 from qdrant_client.http.models import Filter as QFilter, FieldCondition, MatchValue, Range as QRange
 
 # ─── CONFIG ─────────────────────────────────────────────────────────
-openai.api_key  = os.getenv("OPENAI_API_KEY","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")  
+openai.api_key  = os.getenv("OPENAI_API_KEY")  
 QDRANT_HOST     = "localhost"
 QDRANT_PORT     = 6333
 COLLECTION      = "properties_collection"
