@@ -19,9 +19,7 @@ def job():
     )
 
     page = 1
-    abcd = 1
     while True:
-        abcd = abcd + 1
         url = "https://admin.apilproperties.com/api/properties"
         response = requests.get(url, params={"page": page})
 
@@ -30,7 +28,7 @@ def job():
             break
 
         items = response.json().get("data", [])
-        if abcd == 5:
+        if not items:
             print("✅ All data fetched and pushed to Qdrant.")
             break
 
