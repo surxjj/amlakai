@@ -31,7 +31,7 @@ def job():
             break
 
         items = response.json().get("data", [])
-        if abcd ==6:
+        if abcd ==7:
             print("✅ All data fetched and pushed to Qdrant.")
             break
 
