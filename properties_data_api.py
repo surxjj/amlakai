@@ -8,6 +8,7 @@ import schedule
 import time
 
 def job():
+    
     qdrant = QdrantClient(host="localhost", port=6333)
     model = SentenceTransformer('sentence-transformers/paraphrase-MiniLM-L3-v2')
 
@@ -19,7 +20,9 @@ def job():
     )
 
     page = 1
+    abcd = 1
     while True:
+        abcd = abcd + 1
         url = "https://admin.apilproperties.com/api/properties"
         response = requests.get(url, params={"page": page})
 
@@ -28,7 +31,7 @@ def job():
             break
 
         items = response.json().get("data", [])
-        if not items:
+        if abcd ==6:
             print("✅ All data fetched and pushed to Qdrant.")
             break
 
