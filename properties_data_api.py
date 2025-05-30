@@ -94,13 +94,12 @@ def job():
         qdrant.upsert(collection_name=collection_name, points=points)
         print(f"✅ Page {page} inserted ({len(points)} items)")
         page += 1
-def properties_data_upload():
-    schedule.every(12).hours.do(job)
+# def properties_data_upload():
+#     schedule.every(12).hours.do(job)
 
-    job()
+#     job()
 
-    while True:
-        schedule.run_pending()
-        time.sleep(60)
+#     while True:
+#         schedule.run_pending()
+#         time.sleep(60)
 
-properties_data_upload()
