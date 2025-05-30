@@ -3,7 +3,8 @@ from pydantic import BaseModel
 from typing import List, Optional
 import uvicorn
 import openai
-
+import properties_data_api
+import about_us_api
 # Import your main functionality from the provided code
 # Assuming you encapsulate the logic above into callable functions
 from amlak_core import (
@@ -75,4 +76,6 @@ async def query_property(req: QueryRequest):
 
 
 if __name__ == "__main__":
+    properties_data_api.properties_data_upload()
+    about_us_api.about_us_api()
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
